@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Escondendo os radio buttons padrão */
+    input[type="radio"] {
+      display: none;
+    }
+
+    /* Estilo básico para os rótulos dos radio buttons */
+    #labelOption {
+      display: inline-block;
+      padding: 10px 20px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+      border: 2px solid #333;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    /* Estilo para quando o radio button está marcado */
+    input[type="radio"]:checked + #labelOption {
+      background-color: #3498db;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Radio buttons personalizados -->
+  <input type="radio" id="option1" name="group1">
+  <label for="option1" id="labelOption">Opção 1</label>
+
+  <input type="radio" id="option2" name="group1">
+  <label for="option2" id="labelOption">Opção 2</label>
+
+  <input type="radio" id="option3" name="group1">
+  <label for="option3" id="labelOption">Opção 3</label>
+
+</body>
+</html>

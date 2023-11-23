@@ -1,0 +1,329 @@
+/*Importações de Fontes*/
+
+@font-face {
+    font-family: 'Jost';
+    src: url(../../../assets/fonts/Jost/Jost-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url(../../../assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url(../../../assets/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url(../../../assets/fonts/Lato/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Lato-Light';
+    src: url(../../../assets/fonts/Lato/Lato-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Coves Bold';
+    src: url(../../../assets/fonts/CovesTypeface/Coves\ Bold.otf);
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url(../../../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url(../../../assets/fonts/Robot/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Noto';
+    src: url(../../../assets/fonts/Noto/NotoSansMandaic-Regular.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'OpenSans'
+}
+
+@keyframes imagem {
+    0% {
+        opacity: 0;
+        transform: translateY(-250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes entrada-form {
+    0% {
+        opacity: 0;
+        transform: translateX(250px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+body {
+    background-color: #fff;
+}
+
+label {
+    margin: 1% 0% 1% 0%;
+}
+
+input {
+    position: relative;
+    width: 100%;
+    border: none;
+    background-color: #ebebeb;
+    padding: 10px 0px 10px 0px;
+    text-indent: 5px;
+}
+
+input::placeholder {
+    padding-left: 5px;
+}
+
+input:focus {
+    outline: 1px solid #05598d;
+    outline-offset: 0;
+}
+
+button {
+    background-color: #023859;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #4F758D;
+    transition: 500ms;
+    color: #fff;
+}
+
+.title-form h2 {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-family: 'Lato-Regular';
+}
+
+.title-form {
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-form img {
+    position: relative;
+    width: 45px;
+    height: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.fundo-imagem {
+    background-image: url(../../../assets/img/outros/fachada-de-predio4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 50vw;
+    height: 115vh;
+    animation: imagem 2s ease 0s 1 normal forwards;
+}
+
+.item {
+    margin: 1% 0% 1% 0%;
+}
+
+.item label {
+    display: block;
+}
+
+.options-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.options-login p {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.non-cadastre {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+    margin-top: 10px;
+}
+
+.non-cadastre a {
+    color: #05598d;
+    text-decoration: none;
+    transition: 800ms;
+}
+
+.non-cadastre a:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    font-size: smaller;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    cursor: pointer;
+}
+
+.icon p {
+    width: 62px;
+}
+
+.icon img {
+    width: 25px;
+    height: 25px;
+}
+
+.icon a {
+    color: #000;
+    text-decoration: none;
+}
+
+.return a {
+    display: flex;
+    justify-content: center;
+    font-size: smaller;
+    text-decoration: none;
+    margin-top: 2%;
+}
+.return a:hover {
+    text-decoration: underline;
+    color: #05598d;
+}
+
+.items-icons {
+    display: inline-block;
+    height: 80px;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50vw;
+    padding: 0% 5%;
+    animation: entrada-form 2s ease 0s 1 normal forwards;
+}
+
+.user-information-name {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-information-name input {
+    width: 100%;
+    margin-top: 1%;
+}
+
+.identify {
+    width: 48%;
+}
+
+.check p {
+    display: flex;
+    font-size: small;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    padding: 1% 0%;
+}
+
+.check input {
+    width: min-content;
+    margin-right: 5px;
+}
+
+@media screen and (max-width: 767px) {
+
+    .fundo-imagem {
+        background-image: none;
+        width: 0;
+    }
+
+    .title-form {
+        display: flex;
+        justify-content: center;
+    }
+
+    label {
+        margin: 5px 0px 5px 0px;
+    }
+
+    form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .item p {
+        margin-left: 4%;
+    }
+
+    .title-form h2 {
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+    }
+
+    .user-information-name {
+        display: block;
+    }
+
+    .identify {
+        width: 100%;
+    }
+    
+}

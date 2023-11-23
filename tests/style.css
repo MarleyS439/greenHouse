@@ -1,0 +1,48 @@
+
+
+.imovel-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.imovel-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.imovel-item .tipologia {
+    font-weight: 600;
+    color: #333;
+}
+
+.imovel-item .adress-imovel {
+    color: #555;
+}
+
+.imovel-item .adress-city {
+    color: #555;
+}
+
+.imovel-item .price {
+    color: #e74c3c;
+}
+
+.imovel-item .transaction {
+    position: absolute;
+    background-color: #05598d;
+    color: #fff;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+.imovel-item img {
+    width: 326px;
+    height: 210px
+}
+.value-div img {
+    width: 18px;
+    height: 18px;
+}
