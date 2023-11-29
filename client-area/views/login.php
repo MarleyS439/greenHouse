@@ -25,12 +25,12 @@
 
             <div class="item">
                 <label for="emailUSer">E-mail</label>
-                <input type="email" name="emailUSer" id="emailUSer" required placeholder="Digite seu e-mail">
+                <input type="email" name="emailUser" id="emailUser" required placeholder="Digite seu e-mail">
             </div>
 
             <div class="item">
                 <label for="passwdUser">Senha</label>
-                <input type="password" name="passwdUser" id="passwdUser" required placeholder="Digite sua senha">
+                <input type="password" name="senha" id="passwdUser" required placeholder="Digite sua senha">
             </div>
 
             <button type="submit">Entrar</button>

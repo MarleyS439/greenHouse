@@ -1,30 +1,83 @@
 <?php
 require_once('../config/databaseconnect.php');
-require_once('../client-area/models/User.php');
+// require_once('../client-area/models/User.php');
+require_once('../config/registerUser.php');
+require_once('../config/loginUser.php');
+
 
 class UserDao
 {
     public static function insert($user)
     {
-        $conexao = Conexao::conectar();
-        $query = "INSERT INTO tbUser (primeiroNomeUser, sobrenomeUser, emailUser, senhaUser) VALUES (?, ?, ?, ?)";
-        $stmt = $conexao->prepare($query);
-        $stmt->bindValue(1, $user->getNome());
-        $stmt->bindValue(2, $user->getSobrenome());
-        $stmt->bindValue(3, $user->getEmail());
-        $stmt->bindValue(4, $user->getSenha());
+        try {
+            $conexao = Conexao::conectar();
+            $query = "INSERT INTO tbUser (primeiroNomeUser, sobrenomeUser, dataNascimentoUser, emailUser, rgUser, cpfUser, senhaUser, fotoPerfilUser, receberNoticias) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $conexao->prepare($query);
 
-        // Executa a query e retorna true se bem-sucedido, false caso contrário
-        return $stmt->execute();
+            $stmt->bindValue(1, $user['nome']);
+            $stmt->bindValue(2, $user['sobrenome']);
+            $stmt->bindValue(3, null, PDO::PARAM_NULL);
+            $stmt->bindValue(4, $user['email']);
+            $stmt->bindValue(5, null, PDO::PARAM_NULL);
+            $stmt->bindValue(6, null, PDO::PARAM_NULL);
+            $stmt->bindValue(7, $user['senha']);
+            $stmt->bindValue(8, null, PDO::PARAM_NULL);
+            $stmt->bindValue(9, null, PDO::PARAM_NULL);
+
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            die("Erro ao cadastrar usuário: " . $e->getMessage());
+        }
     }
+
 
     public static function selectAll()
     {
+        try {
+            $conexao = Conexao::conectar();
+            $query = "SELECT * FROM tbuser";
+            $stmt = $conexao->prepare($query);
+            $stmt->execute();
+
+            // Retorna os resultados da consulta como um array associativo
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            die("Erro ao recuperar usuários: " . $e->getMessage());
+        }
     }
 
-    public static function selectCod($codUser)
+
+    public static function LoginUser($loginUser)
     {
+        try {
+            $conexao = Conexao::conectar();
+            $query = "SELECT * FROM tbUser WHERE emailUser = :email";
+            $stmt = $conexao->prepare($query);
+            $stmt->bindValue(':email', $loginUser['email']);
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                // Verifica a senha usando password_verify
+                if (password_verify($loginUser['senha'], $usuario['senhaUser'])) {
+                    // Remove a senha do array antes de retornar
+                    echo "Login realizado com sucesso!";
+                    unset($usuario['senhaUser']);
+                    return $usuario;
+                } else {
+                    return null; // Senha incorreta
+                }
+            } else {
+                return null; // Usuário não encontrado
+            }
+        } catch (PDOException $k) {
+            throw new Exception("Erro ao realizar o login: " . $k->getMessage());
+        }
     }
+
+
+
 
     public static function update($codUser, $user)
     {

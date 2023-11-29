@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS tbUser (
     emailUser VARCHAR(60),
     rgUser VARCHAR(20),
     cpfUser CHAR(11),
-    senhaUser VARCHAR(16),
+    senhaUser VARCHAR(255),
     fotoPerfilUser VARCHAR(80),
     receberNoticias CHAR(3),
     codTipoUser INT,

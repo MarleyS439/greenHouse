@@ -16,7 +16,8 @@ class Conexao
                 self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 self::$pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
             } catch (PDOException $e) {
-                die("Erro na conexão com o banco de dados: " . $e->getMessage());
+                echo "Erro na conexão com o banco de dados: " . $e->getMessage();
+                die();
             }
         }
 

@@ -1,56 +1,20 @@
+<?php
+session_start();    
+?>
 <!-- Cabeçalho -->
 <header id="home" class="cabecalho">
     <div class="overlay"></div>
     <!-- Menu de navegação -->
-    <nav class="navbar">
-        <!-- Logo -->
-        <div class="logo-area" onclick="redirectToIndex()">
-            <img src="../../assets/img/outros/Logo.png" alt="Logo Green House">
-        </div>
-
-        <div class="nav-items">
-            <!-- Links de navegação -->
-            <ul class="itens">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#venda">Venda</a></li>
-                <li><a href="#locacao">Locação</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-            </ul>
-        </div>
-
-        <div class="menu">
-            <ul class="items-menu-mobile">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#venda">Venda</a></li>
-                <li><a href="#locacao">Locação</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <div class="loginarea">
-                    <button type="button">
-                        <a href="../login.php"><img src="../../assets/img/icones/pessoa-icone.png" alt="Ícone de pessoa"><span>Entrar</span></a>
-                    </button>
-                </div>
-            </ul>
-        </div>
-
-        <div class="container">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
-
-        <!-- Botão de login -->
-        <div class="login-btn">
-            <button id="btn-login" type="button" onclick="redirectToIndex()">
-                <img src="../../assets/img/icones/pessoa-icone.png" alt="Ícone de pessoa"><span>Entrar</span>
-            </button>
-        </div>
-    </nav>
-
+    <?php
+    if (isset($_SESSION['usuario'])) {
+        include('nav-userlogged.php');
+    } else {
+        include('navbar-unlogged.php');
+    }
+    ?>
 
     <div class="search">
-        <h2>Explore o futuro dos negócios corporativos<br></h2>
+        <h2 class="title">Explore o futuro dos negócios corporativos<br></h2>
         <div class="title-header">
 
             <form action="../../config/search.php" method="get">
@@ -70,11 +34,30 @@
                     <button type="button" id="filter2"><i class="fas fa-sliders-h"></i></button>
                 </div>
 
-                <!--
                 <div class="filters">
-                    
+                    <div class="filter-tipo">
+                        <label for="tipo">Tipo de imóvel</label>
+                        <div id="tipo">
+                            <label for="mansao" id="labelOption">Mansão</label>
+                            <input type="radio" name="" id="mansao">
+                            <label for="mansao" id="labelOption">Flat</label>
+                            <input type="radio" name="" id="flat">
+                            <label for="mansao" id="labelOption">Prédio</label>
+                            <input type="radio" name="" id="predio">
+                            <label for="mansao" id="labelOption">Sala</label>
+                            <input type="radio" name="" id="sala">
+                        </div>
+                    </div>
+
+                    <div class="filter-valor">
+                        <label for="valor">Valor</label>
+                        <div class="itens-filter-valor">
+                            <span>Min R$ 1.000,00</span>
+                            <input type="range" id="valor" min="1000" max="5000000">
+                            <span>Max R$ 5.000.000,00</span>
+                        </div>
+                    </div>
                 </div>
-                -->
             </form>
         </div>
     </div>

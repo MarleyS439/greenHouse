@@ -1,23 +1,28 @@
 <?php
+require_once('../config/databaseconnect.php');
 require_once('../config/userDao.php');
-require_once('../client-area/models/User.php');
 
-$nomeUser = $_POST['nameUser'];
-$sobrenomeUser = $_POST['lastNameUser'];
-$emailUser = $_POST['emailUser'];
-$senhaUser = password_hash($_POST['confirmaPasswdUser'], PASSWORD_DEFAULT);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!empty($_POST['nameUser']) && !empty($_POST['lastNameUser']) && !empty($_POST['emailUser']) && !empty($_POST['confirmaPasswdUser'])) {
+        $user = [
+            'nome' => $_POST['nameUser'],
+            'sobrenome' => $_POST['lastNameUser'],
+            'email' => $_POST['emailUser'],
+            'senha' => password_hash($_POST['confirmaPasswdUser'], PASSWORD_DEFAULT)
+        ];
 
-var_dump($_POST);
+        $insert = UserDao::insert($user);
 
-$user = new User($nomeUser, $sobrenomeUser, $emailUser, $senhaUser);
-
-var_dump($user);
-
-$insert = UserDao::insert($user);
-
-// Exibir mensagens de sucesso/erro, se necessário
-if ($insert) {
-    echo "Cadastro realizado com sucesso!";
+        if ($insert) {
+            echo "Cadastro realizado com sucesso!";
+            header('Location: ../client-area/views/login.php');
+        } else {
+            echo "Erro ao cadastrar. Tente novamente.";
+        }
+    } else {
+        echo "Campos de cadastro vazios no POST";
+    }
 } else {
-    echo "Erro ao cadastrar. Tente novamente.";
+    echo "Requisição não é do tipo POST";
 }
+?>

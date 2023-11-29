@@ -1,40 +1,32 @@
 <?php
-require_once('./greenHouse/config/databaseconnect.php');
+require_once('../config/databaseconnect.php');
+require_once('../config/userDao.php');
+session_start();
 
-if (isset($_POST['emailUSer']) && isset($_POST['passwdUser'])) {
-    if (empty($_POST['emailUSer']) || empty($_POST['passwdUser'])) {
-        // Exiba mensagens de erro ou redirecione com uma mensagem de erro
-        header("Location: caminho/para/seu/formulario/login.php?erro=1");
-        exit();
-    }
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Verifica se os campos de login estão presentes no POST
+    if (!empty($_POST['emailUser']) && !empty($_POST['senha'])) {
+        $emailLogin = $_POST['emailUser'];
+        $senhaLogin = $_POST['senha'];
 
-    $email = $_POST['emailUSer'];
-    $senha = $_POST['passwdUser'];
+        $loginUser = [
+            'email' => $emailLogin,
+            'senha' => $senhaLogin
+        ];
 
-    require_once('../../config/databaseconnect.php');
-    $pdo = Conexao::conectar();
+        $usuario = UserDao::LoginUser($loginUser);
 
-    $sql_code = "SELECT * FROM tbUser WHERE emailUser = :email";
-    $stmt = $pdo->prepare($sql_code);
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
-
-    if ($stmt->rowCount() > 0) {
-        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($usuario && password_verify($senha, $usuario['senhaUser'])) {
-            // Usuário autenticado com sucesso
-            header("Location: greenHouse/client-area/views/index.php");
-            exit();
+        if ($usuario !== null) {
+            $_SESSION['usuario'] = $usuario;
+            header('Location: ../client-area/views/index.php');
+            die();
         } else {
-            // Senha incorreta
-            header("Location: greenHouse/client-area/views/index.php");
-            exit();
+            echo "Falha na autenticação de login";
         }
     } else {
-        // Usuário não encontrado
-        header("Location: greenHouse/client-area/views/index.php");
-        exit();
+        echo "Campos de login vazios no POST";
     }
+} else {
+    echo "Requisição não é do tipo POST";
 }
 ?>

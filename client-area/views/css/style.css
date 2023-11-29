@@ -145,6 +145,83 @@ form button {
     cursor: pointer;
 }
 
+.foto-perfil img {
+    width: 36px;
+    height: auto;
+    border-radius: 50%;
+    border: 1px solid #000;
+}
+
+.foto-perfil {
+    font-size: 10px;
+    display: flex;
+    position: relative;
+    right: 50px;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
+
+.foto-perfil p {
+    margin-left: 5px;
+}
+
+.foto-perfil-logado img {
+    width: 45px;
+    height: auto;
+    border-radius: 50%;
+    border: 1px solid #000;
+}
+
+.foto-perfil-logado {
+    display: flex;
+    position: relative;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
+
+.foto-perfil-logado p {
+    color: #000;
+}
+
+
+.filters {
+    display: none;
+    animation: animation-start-page .2s ease .2s 1 normal backwards;
+}
+
+.filter-valor {
+    padding: 5% 0%;
+    text-align: center;
+}
+
+.filter label {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #05598d;
+    margin-right: 10px;
+}
+
+.exitsession {
+    display: block;
+}
+
+.itens-filter-valor {
+    display: flex;
+    justify-content: space-between;
+}
+
+#tipo {
+    padding: 5% 5% 5% 0%;
+}
+
 /*Área do logo */
 .logo-area {
     cursor: pointer;
@@ -942,11 +1019,6 @@ footer {
         width: 75vw;
     }
 
-    #labelOption {
-        position: relative;
-
-    }
-
     .section-imoveis {
         display: flex;
         justify-content: center;
@@ -954,6 +1026,29 @@ footer {
         padding: 1%;
     }
 
+    .filters {
+        color: #3b3b3b;
+    }
+
+    #tipo {
+        color: #3b3b3b;
+        visibility: visible;
+        display: flex;
+    }
+
+    .filters, .filter-valor {
+        padding: 0;
+    }
+
+    .title-header {
+        position: relative;
+        bottom: 10;
+    }
+
+    .title-header form {
+        position: relative;
+        bottom: 25vh;
+    }
 
     .section-imoveis-itens {
         display: flex;
@@ -1085,6 +1180,10 @@ footer {
         display: flex;
         padding: 5%;
         justify-content: center;
+    }
+
+    .foto-perfil {
+        display: none;
     }
 
 }

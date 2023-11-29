@@ -1,56 +1,57 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../../client-area/views/css/style.css">
-</head>
-<body>
 <nav class="navbar">
-        <!-- Logo -->
-        <div class="logo-area" onclick="redirectToIndex()">
-            <img src="../../assets/img/outros/Logo.png" alt="Logo Green House">
-        </div>
+    <!-- Logo -->
+    <div class="logo-area" onclick="redirectToIndex()">
+        <img src="../../assets/img/outros/Logo.png" alt="Logo Green House">
+    </div>
 
-        <div class="nav-items">
-            <!-- Links de navegação -->
-            <ul class="itens">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#venda">Venda</a></li>
-                <li><a href="#locacao">Locação</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-            </ul>
-        </div>
+    <div class="nav-items">
+        <!-- Links de navegação -->
+        <ul class="itens">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#venda">Venda</a></li>
+            <li><a href="#locacao">Locação</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+        </ul>
+    </div>
 
-        <div class="menu">
-            <ul class="items-menu-mobile">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#venda">Venda</a></li>
-                <li><a href="#locacao">Locação</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <div class="loginarea">
-                    <button type="button">
-                        <a href="../login.php"><img src="../../assets/img/icones/pessoa-icone.png" alt="Ícone de pessoa"><span>Entrar</span></a>
-                    </button>
+    <div class="menu">
+        <ul class="items-menu-mobile">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#venda">Venda</a></li>
+            <li><a href="#locacao">Locação</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <div class="loginarea">
+                <!-- Botão de login -->
+                <div class="foto-perfil-logado" id="openb">
+                    <img src="../../assets/img/clientes/cliente1.jpeg" alt="Foto de perfil">
+                    <p>Nome Cliente</p>
+                    <form action="../../client-area/controllers/logout.php" method="post">
+                        <div clas="exitsession">
+                            <button type="submit">Sair</button>
+                        </div>
+                    </form>
+
                 </div>
-            </ul>
-        </div>
+            </div>
+        </ul>
+    </div>
 
-        <div class="container">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
+    <div class="container">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
 
-        <!-- Botão de login -->
-        <div class="login-btn">
-            <button id="btn-login" type="button" onclick="redirectToIndex()">
-                <img src="../../assets/img/icones/pessoa-icone.png" alt="Ícone de pessoa"><span>Entrar</span>
-            </button>
+    <!-- Botão de login -->
+    <div class="foto-perfil" id="openb">
+        <img src="../../assets/img/clientes/cliente1.jpeg" alt="Foto de perfil">
+        <p>Nome Cliente</p>
+        <div>
+            <form action="../../client-area/controllers/logout.php" method="post">
+                <button class="exitsession" type="submit">Sair</button>
+            </form>
         </div>
-    </nav>
-</body>
-</html>
+    </div>
+</nav>

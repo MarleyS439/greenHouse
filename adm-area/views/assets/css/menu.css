@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url('../../../../assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../../../../assets/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf');
+}
+
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('../../../../assets/fonts/Lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Lato-Light';
+    src: url('../../../../assets/fonts/Lato/Lato-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Coves Bold';
+    src: url('../../../../assets/fonts/CovesTypeface/Coves\ Bold.otf');
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../../../../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'OpenSans-Regular', Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input {
+    padding: 10px;
+}
+
+
+form {
+    margin: 5% 0%;
+}
+
+.title {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title img {
+    width: 150px;
+    height: auto;
+}
+
+.logout-area {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-area button {
+    background-color: #ffffff00;
+    color: #fff;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    position: relative;
+    margin: 10px 0px;
+}
+
+.menu {
+    background-color: #05598d;
+    width: fit-content;
+    padding: 0% 1%;
+    height: 100vh;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+}
+
+.search button {
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+}
+
+.items-navigation {
+    color: #fff;
+}
+
+.items-navigation li {
+    list-style: none;
+    margin: 6% 0%;
+}
+
+.items-navigation ul li a {
+    text-decoration: none;
+    color: #fff;
+    align-content: center;
+}
+
+.items-navigation ul li a:hover {
+    color: #D6E5FB
+}

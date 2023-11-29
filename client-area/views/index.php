@@ -1,3 +1,9 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -18,13 +24,14 @@
 <body>
     <!--Header-->
     <?php
-    include('../../../greenHouse/client-area/views/components/header.php')
+
+    include('./components/header.php');
     ?>
 
     <main id="about">
         <!-- Sobre nós -->
         <?php
-        include('../../../greenHouse/client-area/views/components/about.php');
+        include('./components/about.php');
         ?>
 
         <!-- Imóveis à venda -->
@@ -34,7 +41,7 @@
                 <h2>Imóveis</h2>
             </div>
             <?php
-            include('../../../greenHouse/client-area/views/components/imoveis-venda.php');
+            include('./components/imoveis-venda.php');
             ?>
         </section>
 
@@ -44,7 +51,7 @@
                 <h2>Imóveis</h2>
             </div>
             <?php
-            include('../../../greenHouse/client-area/views/components/imoveis-locacao.php');
+            include('./components/imoveis-locacao.php');
             ?>
         </section>
     </main>
@@ -56,7 +63,7 @@
 
         <div class="cards-testimonials">
             <?php
-            include('../../../greenHouse/client-area/views/components/testimonials.php');
+            include('./components/testimonials.php');
             ?>
         </div>
     </section>
@@ -98,7 +105,6 @@
                     </div>
                 </div>
             </div>
-
 
             <div class="item-footer">
 
@@ -237,6 +243,24 @@
             ]
         })
     </script>
+
+    <script>
+        document.getElementById('filter1').addEventListener('click', function() {
+            var filtersDiv = document.querySelector('.filters');
+            filtersDiv.style.display = filtersDiv.style.display === 'none' ? 'block' : 'none';
+        });
+
+        document.getElementById('filter2').addEventListener('click', function() {
+            var filtersDiv = document.querySelector('.filters');
+            filtersDiv.style.display = filtersDiv.style.display === 'none' ? 'block' : 'none';
+        });
+
+        document.getElementById("openb").addEventListener("click", function() {
+            var sairBtn = this.closest(".exitsession");
+            sairBtn.style.display = "block";
+        });
+    </script>
+
 </body>
 
 </html>

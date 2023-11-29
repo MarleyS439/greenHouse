@@ -108,6 +108,21 @@
 
     </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var form = document.querySelector('form');
+            form.addEventListener('submit', function(event) {
+                var password = document.getElementById('passwdUser').value;
+                var confirmPassword = document.getElementById('confirmaPasswdUser').value;
+
+                if (password !== confirmPassword) {
+                    alert('A senha e a confirmação de senha não coincidem.');
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
