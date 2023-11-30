@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url('../../../../assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../../../../assets/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf');
+}
+
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('../../../../assets/fonts/Lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Lato-Light';
+    src: url('../../../../assets/fonts/Lato/Lato-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Coves Bold';
+    src: url('../../../../assets/fonts/CovesTypeface/Coves\ Bold.otf');
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../../../../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'OpenSans-Regular', Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+.content {
+    width: 100vw;
+    margin: 2%;
+}
+
+.title-table {
+    background-color: #05598d;
+    color: white;
+    font-weight: bold;
+}
+
+.col {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.item-col {
+    padding: 2px;
+    font-size: 14px;
+    text-align: center;
+    border-bottom:1px solid #05598d;
+}
+
+.item-col button {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+}
+
+#delete {
+    color: red;
+}

@@ -27,14 +27,17 @@
                     <li><a href=""><i class="fa-solid fa-users"></i> Usuários</a></li>
                     <li><a href=""><i class="fa-solid fa-users"></i> Imóveis</a></li>
                     <li><a href=""><i class="fa-solid fa-bell"></i> Notificações</a></li>
-                    <li><a href=""><i class="fa-solid fa-heart"></i> Favoitados</a></li>
+                    <li><a href=""><i class="fa-solid fa-heart"></i> Favoritados</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="logout-area">
-            <button type="submit"><i class="fa-solid fa-right-from-bracket fa-rotate-180"></i> Logout</button>
-        </div>
+        <form action="" method="post">
+            <div class="logout-area">
+                <button type="submit"><i class="fa-solid fa-right-from-bracket fa-rotate-180"></i> Logout</button>
+            </div>
+        </form>
+
     </div>
 </body>
 

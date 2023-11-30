@@ -78,7 +78,7 @@ form {
 
 .menu {
     background-color: #05598d;
-    width: fit-content;
+    width: max-content;
     padding: 0% 1%;
     height: 100vh;
 }

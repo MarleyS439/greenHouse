@@ -1,0 +1,82 @@
+@keyframes modal {
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 0;
+        transform: translateY(-250px);
+    }
+
+    38% {
+        animation-timing-function: ease-out;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    55% {
+        animation-timing-function: ease-in;
+        transform: translateY(-65px);
+    }
+
+    72% {
+        animation-timing-function: ease-out;
+        transform: translateY(0);
+    }
+
+    81% {
+        animation-timing-function: ease-in;
+        transform: translateY(-28px);
+    }
+
+    90% {
+        animation-timing-function: ease-out;
+        transform: translateY(0);
+    }
+
+    95% {
+        animation-timing-function: ease-in;
+        transform: translateY(-8px);
+    }
+
+    100% {
+        animation-timing-function: ease-out;
+        transform: translateY(0);
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    width: 30%;
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    animation: modal 1s ease 0s 1 normal forwards;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    background-color: #1c97b2;
+    text-align: center;
+    color: #fff;
+    padding: 5%;
+}
+
+#deleteBtn {
+    background-color: #bf0a0d;
+    color: #fff;
+}
+
+.modal button {
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.close {
+    float: right;
+    font-size: 30px;
+    cursor: pointer;
+}

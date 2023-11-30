@@ -35,16 +35,16 @@ class UserDao
     {
         try {
             $conexao = Conexao::conectar();
-            $query = "SELECT * FROM tbuser";
+            $query = "SELECT * FROM tbUser";
             $stmt = $conexao->prepare($query);
             $stmt->execute();
 
-            // Retorna os resultados da consulta como um array associativo
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             die("Erro ao recuperar usuários: " . $e->getMessage());
         }
     }
+
 
 
     public static function LoginUser($loginUser)
@@ -85,5 +85,16 @@ class UserDao
 
     public static function delete($codUser)
     {
+        try {
+            $conexao = Conexao::conectar();
+            $query = "DELETE FROM tbUser WHERE codUser = :codUser";
+            $stmt = $conexao->prepare($query);
+            $stmt->bindValue(':codUser', $codUser, PDO::PARAM_INT);
+
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            die("Erro ao excluir usuário: " . $e->getMessage());
+        }
     }
+
 }
